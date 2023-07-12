@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Tutaj będziemy wczytywać dane i aktualizować stronę
+  // Wczytujemy dane i uruchamiamy odliczanie
+  loadData();
+  startCountdown();
 });
 
 async function loadData() {
@@ -13,10 +15,6 @@ async function loadData() {
   document.getElementById("prizePool").innerHTML = data.prizePool + " XEC";
   document.getElementById("previousWinner").innerHTML = 
     `Adres: ${data.previousWinner.address}, wygrana: ${data.previousWinner.prize} XEC`;
-}
-
-function updatePage() {
-  // Tutaj będziemy aktualizować stronę na podstawie wczytanych danych
 }
 
 function startCountdown() {
