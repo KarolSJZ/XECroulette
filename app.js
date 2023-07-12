@@ -2,8 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // Tutaj będziemy wczytywać dane i aktualizować stronę
 });
 
-function loadData() {
-  // Tutaj będziemy wczytywać dane z pliku JSON
+async function loadData() {
+  // Wczytujemy dane z pliku JSON
+  var response = await fetch('data.json');
+  var data = await response.json();
+
+  // Aktualizujemy stronę na podstawie wczytanych danych
+  document.getElementById("deposits").innerHTML = 
+    data.deposits.map(deposit => `${deposit.address}: ${deposit.amount} XEC`).join('<br>');
+  document.getElementById("prizePool").innerHTML = data.prizePool + " XEC";
+  document.getElementById("previousWinner").innerHTML = 
+    `Adres: ${data.previousWinner.address}, wygrana: ${data.previousWinner.prize} XEC`;
 }
 
 function updatePage() {
