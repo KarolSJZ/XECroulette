@@ -1,0 +1,17 @@
+{
+  "deposits": [
+    {
+      "address": "abcd",
+      "amount": 5000
+    },
+    {
+      "address": "efgh",
+      "amount": 10000
+    }
+  ],
+  "prizePool": 4500,
+  "previousWinner": {
+    "address": "ijkl",
+    "prize": 4500
+  }
+}
